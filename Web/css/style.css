@@ -1,0 +1,54 @@
+.taxi-90{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.taxi-80{
+    width: 80%;
+    margin-left: 5%;
+}
+
+.taxi-label{
+    padding: 12px 0px 12px .75rem;
+    margin: 2rem 0px 0px 0px;
+}
+.taxi-label-text{
+    font-size: 1.5rem;
+    color: black;
+    line-height: 3rem;
+}
+.taxi-label-icon{
+    width: 3rem;
+    height: 3rem;
+    float: left;
+    margin-right: 6px;
+}
+.taxi-icon-graphic--from{
+    background: url("../img/from_dark.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.taxi-icon-graphic--with{
+    background: url("../img/taxi_dark.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.taxi-icon-graphic--to{
+    background: url("../img/to_dark.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+
+
+.taxi-checkbox--right{
+    margin-right: 15%;
+    text-align: right;
+}
+.taxi-button-center{
+    text-align: center;
+    margin-top: 2rem;
+}

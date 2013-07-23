@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+		xmlns:gap = "http://phonegap.com/ns/1.0"
+
+        id        = "com.mindtricksdev.taxi"
+
+        versionCode="2" 
+
+        version   = "0.5">
+
+
+
+    <!-- versionCode is optional and Android only -->
+
+
+
+    <name>Taxi</name>
+
+
+
+    <description>
+
+        Built for the people
+
+    </description>
+
+
+
+    <author href="http://mindtricksdev.com/apps/Taxi" email="support@mindtricksdev.com">
+
+        Mind Tricks
+
+    </author>
+
+
+
+
+<preference name="phonegap-version" value="2.9.0" />
+
+
+<preference name="permissions" value="none"/>
+
+<preference name="orientation" value="portrait" />
+
+<preference name="fullscreen" value="true" />
+
+<preference name="webviewbounce" value="false" />
+<preference name="splash-screen-duration" value="5000" />
+<preference name="auto-hide-splash-screen" value="false" />
+<preference name="load-url-timeout" value="30000" />
+
+
+<preference name="target-device" value="universal" />
+
+<icon src="icon_512.png" width="512" height="512"/>
+
+
+<gap:splash src="splash.png" />
+<gap:splash src="splash_win8.jpg" gap:platform="winphone" />
+<!-- 
+xlarge (xhdpi): at least 960 x 720
+large (hdpi): at least 640 x 480
+medium (mdpi): at least 470 x 320
+small (ldpi): at least 426 x 320 
+-->
+<!-- <gap:splash src="splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+<gap:splash src="splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+<gap:splash src="splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" /> -->
+
+
+<access origin="*" /> 
+    
+<feature name="http://api.phonegap.com/1.0/geolocation"/>    
+    
+</widget>
+

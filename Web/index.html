@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="lib/topcoat/topcoat-0.5.1/css/topcoat-mobile-light.css">
+    <link rel="stylesheet" type="text/css" href="lib/topcoat/custom.css">
+    <link rel="stylesheet" type="text/css" href="lib/topcoat/checkbox/checkbox.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
+    <title>Taxi | Estimate View</title>
+    <script src="http://debug.build.phonegap.com/target/target-script-min.js#anonymous2"></script>
+</head>
+<body>
+
+<!--    HEADER  -->
+<div class="topcoat-navigation-bar">
+<div class="topcoat-navigation-bar__item left quarter">
+<a class="topcoat-icon-button--quiet back-button" href="#">
+<span class="topcoat-icon topcoat-icon--back"></span>
+</a>
+</div>
+<div class="topcoat-navigation-bar__item center half">
+<h1 class="topcoat-navigation-bar__title">Estimate taxi ride</h1>
+</div>
+<div class="topcoat-navigation-bar__item right quarter">
+<a class="topcoat-icon-button--quiet">
+<span class="topcoat-icon topcoat-icon--edit"></span>
+</a>
+</div>
+</div>
+<!--    HEADER  -->
+    
+    
+<!--    CONTENT-->
+<!--    FROM-->
+    <div class="taxi-label">
+        <span class="taxi-label-icon taxi-icon-graphic--from"></span>
+        <span class="taxi-label-text">from</span>
+    </div>
+    
+    <div>
+        <input type="search" value="" placeholder="source location" class="topcoat-search-input taxi-80">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--location"></span>
+        </a>
+    </div>
+    
+    <div class="taxi-checkbox--right">
+        <input type="checkbox" id="use-current-location-check" class="topcoat-checkbox" checked="checked">
+        <label for="use-current-location-check" class="topcoat-checkbox-label topcoat-checkbox-label--left">Use my current location</label>
+    </div>
+<!--    TO-->
+    <div class="taxi-label">
+        <span class="taxi-label-icon taxi-icon-graphic--to"></span>
+        <span class="taxi-label-text">to</span>
+    </div>
+    
+    <div>
+        <input type="search" value="" placeholder="destination location" class="topcoat-search-input taxi-80">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--location"></span>
+        </a>
+    </div>
+    
+<!--    WITH-->
+    <div class="taxi-label">
+        <span class="taxi-label-icon taxi-icon-graphic--with"></span>
+        <span class="taxi-label-text">with</span>
+    </div>
+    
+    <div>
+        <input type="search" value="" placeholder="taxi costs" class="topcoat-search-input taxi-80">
+        <a class="topcoat-icon-button--quiet">
+            <span class="topcoat-icon topcoat-icon--add"></span>
+        </a>
+    </div>
+    <div class="taxi-checkbox--right">
+        <input type="checkbox" id="enable-comparison-check" class="topcoat-checkbox">
+        <label for="enable-comparison-check" class="topcoat-checkbox-label topcoat-checkbox-label--left">Compare all costs</label>
+    </div>
+    
+<!--    ESTIMATE BUTTON-->
+    <div class="taxi-button-center">
+        <a class="topcoat-button--large--cta" >Estimate</a>
+    </div>
+</body>
+</html>

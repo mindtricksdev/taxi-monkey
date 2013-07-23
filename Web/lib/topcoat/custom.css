@@ -1,0 +1,19 @@
+.topcoat-icon--back {
+    background: url("icons/svg/back.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+.topcoat-icon--location {
+    background: url("icons/svg/location.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.topcoat-icon--add {
+    background: url("icons/svg/plus.svg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
