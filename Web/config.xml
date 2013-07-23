@@ -30,10 +30,10 @@
     
     
     
-    <icon src="icons/default.png" width="512" height="512"/>
-    <icon src="icons/bb.png" gap:platform="blackberry" />
+    <icon src="pg-build/icon/default.png" width="512" height="512"/>
+    <icon src="pg-build/icon/bb.png" gap:platform="blackberry" />
     
-    <gap:splash src="splash.png" />
-    <gap:splash src="splash_win8.jpg" gap:platform="winphone" />
+    <gap:splash src="pg-build/splash/default.png" />
+    <gap:splash src="pg-build/splash/winphone.jpg" gap:platform="winphone" />
 
 </widget>
