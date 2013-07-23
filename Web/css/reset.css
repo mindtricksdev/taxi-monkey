@@ -2,11 +2,13 @@
 	/* disable callout, image save panel on long press */
 	-webkit-touch-callout: none !important;
 	-webkit-tap-highlight-color: transparent !important;
-}
-/* no dragging at all */
-*{
+    
+    /* no dragging at all */
 	-webkit-user-drag: none !important;
 	cursor: default !important;
+    
+    /* disable double-tap-to-zoom for IE10 */
+    -ms-touch-action: none !important;
 }
 
 
