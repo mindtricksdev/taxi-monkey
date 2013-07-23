@@ -31,7 +31,8 @@
     
     
     
-    <icon src="icon_512.png" width="512" height="512"/>
+    <icon src="icons/default.png" width="512" height="512"/>
+    <icon src="icons/bb.png" gap:platform="blackberry" />
     
     <gap:splash src="splash.png" />
     <gap:splash src="splash_win8.jpg" gap:platform="winphone" />
