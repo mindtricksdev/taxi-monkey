@@ -5,6 +5,9 @@
 function onDeviceReady() {
     "use strict";
     // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+    
+    navigator.splashscreen.hide();
+    
 }
 
 $(document).ready(function () {
@@ -15,4 +18,3 @@ $(document).ready(function () {
     });
   // Your main code
 });
-

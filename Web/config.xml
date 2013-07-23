@@ -20,7 +20,6 @@
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="false" />
-    <preference name="splash-screen-duration" value="5000" />
     <preference name="auto-hide-splash-screen" value="false" />
     <preference name="load-url-timeout" value="30000" />
     <preference name="target-device" value="universal" />
