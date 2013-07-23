@@ -1,5 +1,5 @@
 /*jslint browser:true */
-/*global $, jQuery, alert */
+/*global $, jQuery, alert, FastClick */
 
 var app = {
 
@@ -15,6 +15,7 @@ var app = {
     initialize: function () {
         "use strict";
         navigator.splashscreen.hide();
+        
         app.showAlert("App initialized", "Info");
     }
     
@@ -30,6 +31,7 @@ function onDeviceReady() {
 
 $(document).ready(function () {
     "use strict";
+    FastClick.attach(document.body);
     $(document).bind('deviceready', function () {
         // Phonegap ready
         onDeviceReady();
