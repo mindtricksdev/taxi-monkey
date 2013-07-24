@@ -12,6 +12,7 @@
 
     <script type='application/javascript' src="lib/fastclick/fastclick.js"></script>
     <script type='application/javascript' src="lib/jquery/jquery-1.10.2.min.js"></script>
+    <script type='application/javascript' src="lib/jquery/jquery-ui-1.10.3.js"></script>
     <script type='application/javascript' src="js/script.js"></script>
     
     <title>Taxi | Estimate View</title>
@@ -77,7 +78,10 @@
     </div>
     
 
-    <input type="search" value="" placeholder="taxi costs" class="topcoat-search-input taxi-estimate-search">
+    <input type="search" value="" placeholder="taxi costs" class="topcoat-search-input taxi-estimate-search" id="taxiCost">
+    <div id="taxiCostsSuggestions" class="taxi-estimate-search">
+       
+    </div>
 
     <div class="taxi-checkbox--right">
         <input type="checkbox" id="enable-comparison-check" class="topcoat-checkbox">

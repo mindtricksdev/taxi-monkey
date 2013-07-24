@@ -51,3 +51,15 @@
     text-align: center;
     margin-top: 2rem;
 }
+
+#taxiCostsSuggestions{
+    max-height: 4rem;
+    overflow-x: hidden;
+    margin-left: 60px;
+}
+
+ul.ui-autocomplete.topcoat-list>li{
+    padding: 0.5rem;
+    margin-left: 30px;
+}
+.ui-helper-hidden-accessible { display:none; }
