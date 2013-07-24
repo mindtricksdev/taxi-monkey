@@ -1,5 +1,5 @@
 /*jslint browser:true */
-/*global $, jQuery, alert, FastClick, console */
+/*global $, jQuery, alert, FastClick, console, MemoryAdapter */
 
 var app = {
 
@@ -26,11 +26,8 @@ var app = {
         //app.showAlert("App initialized", "Info");
         
         // autocomplete taxi fields
-        var taxiCosts = [
-            "Taxi Alfa",
-            "Taxi Speed",
-            "Taxi Nothing"
-        ];
+        var adapter = new MemoryAdapter();
+        var taxiCosts = adapter.getData();
         
         $('#taxiCost').autocomplete({
             source: function (request, response) {
@@ -38,7 +35,7 @@ var app = {
                 response(results.slice(0, 1));
             },
             appendTo: '#taxiCostsSuggestions',
-            minLength: 0,
+            //minLength: 1,
             create: function (event, ui) {
                 $('ul.ui-autocomplete').addClass('topcoat-list');
                 //$('#taxiCostsSuggestions').addClass('topcoat-list__container');
@@ -52,6 +49,9 @@ var app = {
             },
             change: function (event, ui) {
                 if (!ui.item) { $(this).val(''); }
+            },
+            select: function (event, ui) {
+                $(this).val(ui.item.label);
             }
         })
             .data('ui-autocomplete')._renderItem = function (ul, item) {
