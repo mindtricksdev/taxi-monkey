@@ -1,15 +1,5 @@
-.taxi-90{
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-.taxi-80{
-    width: 80%;
-    margin-left: 5%;
-}
-
 .taxi-label{
-    padding: 12px 0px 12px .75rem;
+    padding: 12px 0px 12px 4.5%;
     margin: 2rem 0px 0px 0px;
 }
 .taxi-label-text{
@@ -42,10 +32,19 @@
     background-size: cover;
 }
 
+.taxi-estimate-search{
+    margin-left: 5%;
+    margin-right: 0%;
+    width: 85%;
+}
+.taxi-estimate-location{
+    float: right;
+    margin-right: 5%;
+}
 
 
 .taxi-checkbox--right{
-    margin-right: 15%;
+    margin-right: 10%;
     text-align: right;
 }
 .taxi-button-center{
