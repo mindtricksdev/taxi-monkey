@@ -28,7 +28,6 @@ var app = {
         // autocomplete taxi fields
         var adapter = new MemoryAdapter();
         var taxiCosts = adapter.getData();
-        
         $('#taxiCost').autocomplete({
             source: function (request, response) {
                 var results = $.ui.autocomplete.filter(taxiCosts, request.term);
@@ -61,6 +60,21 @@ var app = {
                     .appendTo(ul)
                     .addClass("topcoat-list__item");
             };
+        
+        
+        // if 'compare all' checkbox is checked hide the searchbox and display an info msg
+        function updateTaxiLayout() {
+            if ($('#enable-comparison-check')[0].checked === true) {
+                $('#taxiCostsInfoBox').text("This option will list all taxi ?providers? costs from your area.");
+                $('#taxiCost').hide();
+                $('#taxiCostsInfoBox').show();
+            } else {
+                $('#taxiCostsInfoBox').hide();
+                $('#taxiCost').show();
+            }
+        }
+        $('#enable-comparison-check').bind('change', updateTaxiLayout);
+        
     }
     
 };

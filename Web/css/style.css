@@ -58,6 +58,13 @@
     margin-left: 60px;
 }
 
+.taxi-search-size{
+    line-height: 3rem;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
 ul.ui-autocomplete.topcoat-list>li{
     padding: 0.5rem;
     margin-left: 30px;
