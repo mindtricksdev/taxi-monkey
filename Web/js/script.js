@@ -61,7 +61,7 @@ var app = {
             };
         
         
-        // if 'compare all' checkbox is checked hide the searchbox and display an info msg
+        // if 'compare all' checkbox is checked hide the search input and display an info msg
         function updateTaxiLayout() {
             if ($('#enable-comparison-check')[0].checked === true) {
                 $('#taxiCostsInfoBox').text("This option will list all taxi ?providers? costs from your area.");
@@ -80,6 +80,20 @@ var app = {
             
         }
         $('#addNewTaxiCost').bind('click', displayAddNewTaxiCost);
+        
+        
+        // if 'use current location' checkbox is checked disable the search input
+        function updateFromLayout() {
+            if ($('#use-current-location-check')[0].checked === true) {
+                $('#fromInfoBox').text("Loading your location..");
+                $('#fromLocationName').hide();
+                $('#fromInfoBox').show();
+            } else {
+                $('#fromInfoBox').hide();
+                $('#fromLocationName').show();
+            }
+        }
+        $('#use-current-location-check').bind('change', updateFromLayout);
     }
     
 };

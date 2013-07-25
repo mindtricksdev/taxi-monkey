@@ -74,3 +74,6 @@ ul.ui-autocomplete.topcoat-list>li{
     display:none;
 }
 
+.topcoat-overlay-bg, .topcoat-overlay{
+    display: none;
+}
