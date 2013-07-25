@@ -26,8 +26,7 @@ var app = {
         //app.showAlert("App initialized", "Info");
         
         // autocomplete taxi fields
-        var adapter = new MemoryAdapter();
-        var taxiCosts = adapter.getData();
+        var taxiCosts = (new MemoryAdapter()).getData();
         $('#taxiCost').autocomplete({
             source: function (request, response) {
                 var results = $.ui.autocomplete.filter(taxiCosts, request.term);
@@ -75,6 +74,12 @@ var app = {
         }
         $('#enable-comparison-check').bind('change', updateTaxiLayout);
         
+        
+        // add new taxi cost will launch a modal
+        function displayAddNewTaxiCost() {
+            
+        }
+        $('#addNewTaxiCost').bind('click', displayAddNewTaxiCost);
     }
     
 };
