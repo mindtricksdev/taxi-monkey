@@ -101,6 +101,7 @@ var app = {
         "use strict";
         function geolocationSuccess(position) {
             app.showAlert("Got user location" + position.coords.latitude + " / " + position.coords.longitude, "Success");
+            //codeLatLng(position.coords.latitude,position.coords.longitude);
         }
         function geolocationError() {
             app.showAlert("Failed to Get user location", "Error");
@@ -113,6 +114,24 @@ var app = {
     }
     
 };
+
+
+function codeLatLng(lat, lng) {
+  var latlng = new google.maps.LatLng(lat, lng);
+  geocoder.geocode({'latLng': latlng}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+     if (results[1]) {
+       
+        $('#fromInfoBox').text(results[1].formatted_address);
+      
+      } else {
+        alert('No results found');
+      }
+    } else {
+      alert('Geocoder failed due to: ' + status);
+    }
+  });
+}
 
 function onDeviceReady() {
     "use strict";
