@@ -1,4 +1,4 @@
-/*jslint browser:true */
+/*jslint browser:true nomen:true*/
 /*global $, jQuery, alert, FastClick, console, MemoryAdapter, locationlib */
 
 var app = {
@@ -99,7 +99,15 @@ var app = {
     
     loadUserLocation: function () {
         "use strict";
-        locationlib.getCurrentLocation();
+        function callback(location) {
+            $('#fromInfoBox').text(location);
+        }
+        locationlib.getCurrentLocationAsString(callback);
+        
+//        function callback2(lat, lng) {
+//            $('#fromInfoBox').text(lat + " / " + lng);
+//        }
+       // locationlib.getCurrentLocationAsLatLng(callback2);
     }
     
 };
