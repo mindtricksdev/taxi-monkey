@@ -10,7 +10,7 @@ var locationlib = {
         return this.geocoder;
     },
     
-    codeLatLng: function (lat, lng) {
+    reverseGeocode: function (lat, lng) {
         "use strict";
         var latlng = new google.maps.LatLng(lat, lng);
         this.getGeocoder().geocode({'latLng': latlng}, function (results, status) {
@@ -34,7 +34,7 @@ var locationlib = {
             console.log("Got user location: " + position.coords.latitude + " / " + position.coords.longitude, "Success");
             
             
-            that.codeLatLng(position.coords.latitude, position.coords.longitude);
+            that.reverseGeocode(position.coords.latitude, position.coords.longitude);
         }
         function geolocationError() {
             app.showAlert("Failed to get user location", "Error");
