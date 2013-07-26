@@ -86,6 +86,7 @@ var app = {
         function updateFromLayout() {
             if ($('#use-current-location-check')[0].checked === true) {
                 $('#fromInfoBox').text("Loading your location..");
+                app.loadUserLocation();
                 $('#fromLocationName').hide();
                 $('#fromInfoBox').show();
             } else {
@@ -94,6 +95,21 @@ var app = {
             }
         }
         $('#use-current-location-check').bind('change', updateFromLayout);
+    },
+    
+    loadUserLocation: function (position) {
+        "use strict";
+        function geolocationSuccess() {
+            app.showAlert("Got user location" + position.coords.latitude + " / " + position.coords.longitude, "Success");
+        }
+        function geolocationError() {
+            app.showAlert("Failed to Get user location", "Error");
+        }
+        var geolocationOptions = {enableHighAccuracy: true};
+        navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, geolocationOptions);
+        
+        
+        
     }
     
 };
