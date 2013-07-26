@@ -97,9 +97,9 @@ var app = {
         $('#use-current-location-check').bind('change', updateFromLayout);
     },
     
-    loadUserLocation: function (position) {
+    loadUserLocation: function () {
         "use strict";
-        function geolocationSuccess() {
+        function geolocationSuccess(position) {
             app.showAlert("Got user location" + position.coords.latitude + " / " + position.coords.longitude, "Success");
         }
         function geolocationError() {
