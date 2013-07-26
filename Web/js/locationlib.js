@@ -1,4 +1,4 @@
-/*global $, jQuery, google, geocoder, app, navigator, console */
+/*global $, jQuery, google, geocoder, navigator, console, util */
 
 var locationlib = {
     getGeocoder: function () {
@@ -16,15 +16,15 @@ var locationlib = {
         this.getGeocoder().geocode({'latLng': latlng}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 if (results[1]) {
-                    var returnValue = results[1].formatted_address;
-                    callback(returnValue);
+                    var address = results[1].formatted_address;
+                    callback(address);
                 } else {
                     // TODO
-                    app.showAlert('No results found');
+                    util.showAlert('No results found');
                 }
             } else {
                 // TODO
-                app.showAlert('Geocoder failed due to: ' + status);
+                util.showAlert('Geocoder failed due to: ' + status);
             }
         });
     },
@@ -39,11 +39,11 @@ var locationlib = {
                     callback(lat, lng);
                 } else {
                     // TODO
-                    app.showAlert('No results found');
+                    util.showAlert('No results found');
                 }
             } else {
                 // TODO
-                app.showAlert('Geocoder failed due to: ' + status);
+                util.showAlert('Geocoder failed due to: ' + status);
             }
         });
     },
@@ -76,7 +76,7 @@ var locationlib = {
         }
         function geolocationError() {
             // TODO
-            app.showAlert("Failed to get user location", "Error");
+            util.showAlert("Failed to get user location", "Error");
         }
         
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, {enableHighAccuracy: true});
