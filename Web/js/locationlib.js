@@ -1,15 +1,19 @@
 /*global $, jQuery, google, geocoder, app, navigator, console */
 
 var locationlib = {
-    initialize: function () {
+    getGeocoder: function () {
         "use strict";
-        this.geocoder = new google.maps.Geocoder();
+        // create geocoder object as property of locationlib
+        if (!this.geocoder) {
+            this.geocoder = new google.maps.Geocoder();
+        }
+        return this.geocoder;
     },
     
     codeLatLng: function (lat, lng) {
         "use strict";
         var latlng = new google.maps.LatLng(lat, lng);
-        this.geocoder.geocode({'latLng': latlng}, function (results, status) {
+        this.getGeocoder().geocode({'latLng': latlng}, function (results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 if (results[1]) {
                     // this should not be here

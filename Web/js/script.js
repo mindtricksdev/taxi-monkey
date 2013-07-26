@@ -99,7 +99,6 @@ var app = {
     
     loadUserLocation: function () {
         "use strict";
-        locationlib.initialize();
         locationlib.getCurrentLocation();
     }
     
