@@ -2,6 +2,7 @@
 /*global $, jQuery, FastClick, console, MemoryAdapter, locationlib, setup */
 
 var app = {
+    runningOnDevice: false,
     initialize: function () {
         "use strict";
         setup.initialize();
@@ -61,7 +62,7 @@ var app = {
 
 $(document).ready(function () {
     "use strict";
-    FastClick.attach(document.body);
+    
     $(document).bind('deviceready', function () {
         // Phonegap ready
         app.phonegapCallbacks.onDeviceReady();

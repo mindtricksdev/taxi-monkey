@@ -122,8 +122,11 @@ var setup = {
             source: locationlib.getGeocodingAutocompleteSource
         });
     },
-        
     
+    initFastButtons: function () {
+        "use strict";
+        FastClick.attach(document.body);
+    },
     
     initialize: function () {
         "use strict";
@@ -135,6 +138,7 @@ var setup = {
         setup.addAutoCompleteToAddresses();
         setup.addPhonegapEvents();
         setup.overrideDefaultBackButtonBehavior();
+        setup.initFastButtons();
         
         console.log("App initialized");
     }
