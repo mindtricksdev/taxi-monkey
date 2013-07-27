@@ -60,15 +60,24 @@ var app = {
 
 
 
+
+
 $(document).ready(function () {
     "use strict";
     
-    $(document).bind('deviceready', function () {
-        // Phonegap ready
+    if (document.URL.indexOf("http://") === -1) {
+        console.log("App is running on device");
+        app.runningOnDevice = true;
+        
+        // wait for phonegap to be ready
+        $(document).bind('deviceready', function () {
+            app.phonegapCallbacks.onDeviceReady();
+        });
+    } else {
+        console.log("App is running in browser");
+        app.runningOnDevice = false;
+        
+        // fire manually if in browser
         app.phonegapCallbacks.onDeviceReady();
-    });
-    
-    // this line should be removed when running on device
-    app.initialize();
-    
+    }
 });
