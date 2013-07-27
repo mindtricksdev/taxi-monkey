@@ -9,11 +9,13 @@ var app = {
     
     loadUserLocation: function () {
         "use strict";
-        function callback(location) {
+        function callback(location, lat, lng) {
             $('#fromInfoBox').text(location);
+            $('#fromLatLng').val(lat + ';' + lng);
+            $('#fromAddr').val(location);
+            
         }
         locationlib.getCurrentLocationAsString(callback);
-        
         //        function callback2(lat, lng) {
         //            $('#fromInfoBox').text(lat + " / " + lng);
         //        }

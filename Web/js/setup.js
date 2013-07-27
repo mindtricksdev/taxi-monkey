@@ -1,5 +1,5 @@
 /*jslint browser:true nomen:true*/
-/*global $, jQuery, FastClick, console, MemoryAdapter, app*/
+/*global $, jQuery, FastClick, console, MemoryAdapter, app, locationlib*/
 var setup = {
 
     hideSplashScreen: function () {
@@ -89,6 +89,15 @@ var setup = {
         $('#use-current-location-check').bind('change', updateFromLayout);
     },
     
+    addAutoCompleteToAddresses: function () {
+        "use strict";
+        $('#fromLocationName, #toLocationName').autocomplete({
+            source: locationlib.getGeocodingAutocompleteSource
+        });
+    },
+        
+    
+    
     initialize: function () {
         "use strict";
         setup.addAutoCompleteToTaxi();
@@ -96,6 +105,7 @@ var setup = {
         setup.addDialogAddNewTaxiCost();
         setup.addUseMyCurrentLocation();
         setup.hideSplashScreen();
+        setup.addAutoCompleteToAddresses();
         
         console.log("App initialized");
     }

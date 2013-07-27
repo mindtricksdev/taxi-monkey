@@ -17,7 +17,7 @@ var locationlib = {
             if (status === google.maps.GeocoderStatus.OK) {
                 if (results[1]) {
                     var address = results[1].formatted_address;
-                    callback(address);
+                    callback(address, lat, lng);
                 } else {
                     // TODO
                     util.showAlert('No results found');
@@ -80,6 +80,40 @@ var locationlib = {
         }
         
         navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, {enableHighAccuracy: true});
+    },
+    
+    getGeocodingAutocompleteSource: function (request, response) {
+        "use strict";
+        var geocoder = locationlib.getGeocoder();
+        //this.getGeocoder().geocode({
+        geocoder.geocode({
+            'address': request.term
+        }, function (results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                var searchLoc = results[0].geometry.location,
+                    lat = results[0].geometry.location.lat(),
+                    lng = results[0].geometry.location.lng(),
+                    latlng = new google.maps.LatLng(lat, lng),
+                    bounds = results[0].geometry.bounds;
+
+                //this.getGeocoder().geocode({
+                geocoder.geocode({
+                    'latLng': latlng
+                }, function (results1, status1) {
+                    if (status1 === google.maps.GeocoderStatus.OK) {
+                        if (results1[1]) {
+                            response($.map(results1, function (loc) {
+                                return {
+                                    label: loc.formatted_address,
+                                    value: loc.formatted_address,
+                                    bounds: loc.geometry.bounds
+                                };
+                            }));
+                        }
+                    }
+                });
+            }
+        });
     }
 
 };
