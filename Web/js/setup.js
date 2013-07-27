@@ -5,6 +5,7 @@ var setup = {
     hideSplashScreen: function () {
         "use strict";
         if (navigator.splashscreen) {
+            console.log("Hide splashscreen");
             navigator.splashscreen.hide();
         }
     },

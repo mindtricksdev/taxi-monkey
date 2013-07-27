@@ -11,6 +11,7 @@ var app = {
             
             // wait for phonegap to be ready
             $(document).bind('deviceready', function () {
+                console.log("Device is ready");
                 app.phonegapCallbacks.onDeviceReady();
             });
         } else {
@@ -25,6 +26,7 @@ var app = {
     phonegapCallbacks: {
         onDeviceReady: function () {
             "use strict";
+            console.log("[app.phonegapCallbacks.onDeviceReady]");
             // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
             setup.initialize();
         },
