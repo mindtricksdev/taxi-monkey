@@ -5,13 +5,28 @@ var app = {
     runningOnDevice: false,
     initialize: function () {
         "use strict";
-        setup.initialize();
+        if (document.URL.indexOf("http://") === -1) {
+            console.log("App is running on device");
+            app.runningOnDevice = true;
+            
+            // wait for phonegap to be ready
+            $(document).bind('deviceready', function () {
+                app.phonegapCallbacks.onDeviceReady();
+            });
+        } else {
+            console.log("App is running in browser");
+            app.runningOnDevice = false;
+            
+            // fire manually if in browser
+            app.phonegapCallbacks.onDeviceReady();
+        }
+
     },
     phonegapCallbacks: {
         onDeviceReady: function () {
             "use strict";
             // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-            app.initialize();
+            setup.initialize();
         },
         
         onPause: function () {
@@ -64,20 +79,5 @@ var app = {
 
 $(document).ready(function () {
     "use strict";
-    
-    if (document.URL.indexOf("http://") === -1) {
-        console.log("App is running on device");
-        app.runningOnDevice = true;
-        
-        // wait for phonegap to be ready
-        $(document).bind('deviceready', function () {
-            app.phonegapCallbacks.onDeviceReady();
-        });
-    } else {
-        console.log("App is running in browser");
-        app.runningOnDevice = false;
-        
-        // fire manually if in browser
-        app.phonegapCallbacks.onDeviceReady();
-    }
+    app.initialize();
 });
