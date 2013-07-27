@@ -6,39 +6,39 @@ var app = {
         "use strict";
         setup.initialize();
     },
-    
-    onDeviceReady: function () {
-        "use strict";
-        // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-        app.initialize();
-    },
-    
-    onPause: function () {
-        "use strict";
-        // fires when the application is put into the background
+    phonegapCallbacks: {
+        onDeviceReady: function () {
+            "use strict";
+            // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+            app.initialize();
+        },
         
+        onPause: function () {
+            "use strict";
+            // fires when the application is put into the background
+            
+        },
+        
+        onResume: function () {
+            "use strict";
+            // fires when the application is retrieved from the background
+        },
+        
+        onOnline: function () {
+            "use strict";
+            // fires when the application is online (connected to the Internet)
+        },
+        
+        onOffline: function () {
+            "use strict";
+            // fires when the application is offline (not connected to the Internet)
+        },
+        
+        onBackButton: function () {
+            "use strict";
+            // fires when the user presses the back button
+        }
     },
-    
-    onResume: function () {
-        "use strict";
-        // fires when the application is retrieved from the background
-    },
-    
-    onOnline: function () {
-        "use strict";
-        // fires when the application is online (connected to the Internet)
-    },
-    
-    onOffline: function () {
-        "use strict";
-        // fires when the application is offline (not connected to the Internet)
-    },
-    
-    onBackButton: function () {
-        "use strict";
-        // fires when the user presses the back button
-    },
-    
     
     loadUserLocation: function () {
         "use strict";
@@ -64,7 +64,7 @@ $(document).ready(function () {
     FastClick.attach(document.body);
     $(document).bind('deviceready', function () {
         // Phonegap ready
-        app.onDeviceReady();
+        app.phonegapCallbacks.onDeviceReady();
     });
     
     // this line should be removed when running on device

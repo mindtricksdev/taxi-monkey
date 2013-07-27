@@ -13,26 +13,26 @@ var setup = {
         "use strict";
         $(document).bind('pause', function () {
             console.log("App paused");
-            app.onPause();
+            app.phonegapCallbacks.onPause();
         });
         $(document).bind('resume', function () {
             console.log("App resumed");
-            app.onResume();
+            app.phonegapCallbacks.onResume();
         });
         $(document).bind('online', function () {
             console.log("App online");
-            app.onOnline();
+            app.phonegapCallbacks.onOnline();
         });
         $(document).bind('offline', function () {
             console.log("App offline");
-            app.onOffline();
+            app.phonegapCallbacks.onOffline();
         });
     },
     
     overrideDefaultBackButtonBehavior: function () {
         "use strict";
         $(document).bind('backbutton', function () {
-            app.onBackButton();
+            app.phonegapCallbacks.onBackButton();
         });
     },
     
