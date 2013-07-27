@@ -7,6 +7,39 @@ var app = {
         setup.initialize();
     },
     
+    onDeviceReady: function () {
+        "use strict";
+        // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+        app.initialize();
+    },
+    
+    onPause: function () {
+        "use strict";
+        // fires when the application is put into the background
+        
+    },
+    
+    onResume: function () {
+        "use strict";
+        // fires when the application is retrieved from the background
+    },
+    
+    onOnline: function () {
+        "use strict";
+        // fires when the application is online (connected to the Internet)
+    },
+    
+    onOffline: function () {
+        "use strict";
+        // fires when the application is offline (not connected to the Internet)
+    },
+    
+    onBackButton: function () {
+        "use strict";
+        // fires when the user presses the back button
+    },
+    
+    
     loadUserLocation: function () {
         "use strict";
         function callback(location, lat, lng) {
@@ -26,19 +59,12 @@ var app = {
 
 
 
-
-function onDeviceReady() {
-    "use strict";
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    app.initialize();
-}
-
 $(document).ready(function () {
     "use strict";
     FastClick.attach(document.body);
     $(document).bind('deviceready', function () {
         // Phonegap ready
-        onDeviceReady();
+        app.onDeviceReady();
     });
     
     // this line should be removed when running on device

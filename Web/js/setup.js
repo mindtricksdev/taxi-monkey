@@ -9,6 +9,33 @@ var setup = {
         }
     },
     
+    addPhonegapEvents: function () {
+        "use strict";
+        $(document).bind('pause', function () {
+            console.log("App paused");
+            app.onPause();
+        });
+        $(document).bind('resume', function () {
+            console.log("App resumed");
+            app.onResume();
+        });
+        $(document).bind('online', function () {
+            console.log("App online");
+            app.onOnline();
+        });
+        $(document).bind('offline', function () {
+            console.log("App offline");
+            app.onOffline();
+        });
+    },
+    
+    overrideDefaultBackButtonBehavior: function () {
+        "use strict";
+        $(document).bind('backbutton', function () {
+            app.onBackButton();
+        });
+    },
+    
     addAutoCompleteToTaxi: function () {
         "use strict";
         // autocomplete taxi fields
@@ -106,6 +133,8 @@ var setup = {
         setup.addUseMyCurrentLocation();
         setup.hideSplashScreen();
         setup.addAutoCompleteToAddresses();
+        setup.addPhonegapEvents();
+        setup.overrideDefaultBackButtonBehavior();
         
         console.log("App initialized");
     }
