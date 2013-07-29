@@ -63,6 +63,7 @@ var setup = {
             },
             select: function (event, ui) {
                 $(this).val(ui.item.label);
+                $(this).blur();
             }
         })
             .data('ui-autocomplete')._renderItem = function (ul, item) {
@@ -123,7 +124,11 @@ var setup = {
             create: function (event, ui) {
                 $('ul.ui-autocomplete').addClass('address-suggestions-ul');
             },
-            appendTo: '#fromSuggestions'
+            appendTo: '#fromSuggestions',
+            select: function (event, ui) {
+                $(this).val(ui.item.label);
+                $(this).blur();
+            }
         })
             .data('ui-autocomplete')._renderItem = function (ul, item) {
                 return $("<li>")
@@ -138,7 +143,11 @@ var setup = {
             create: function (event, ui) {
                 $('ul.ui-autocomplete').addClass('address-suggestions-ul');
             },
-            appendTo: '#toSuggestions'
+            appendTo: '#toSuggestions',
+            select: function (event, ui) {
+                $(this).val(ui.item.label);
+                $(this).blur();
+            }
         })
             .data('ui-autocomplete')._renderItem = function (ul, item) {
                 return $("<li>")
