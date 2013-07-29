@@ -45,11 +45,13 @@ var app = {
         onOnline: function () {
             "use strict";
             // fires when the application is online (connected to the Internet)
+            app.isOnline = true;
         },
         
         onOffline: function () {
             "use strict";
             // fires when the application is offline (not connected to the Internet)
+            app.isOnline = false;
         },
         
         onBackButton: function () {
@@ -80,9 +82,13 @@ var app = {
             city: "Bucuresti",
             lat: "",
             lng: "",
-            address: ""
+            address: "",
+            fullAdress: "",
+            shortAdress: "",
+            ready: "error"
         }
     },
+    isOnline: "false",
     
     displayMapOnMainPage: function () {
         "use strict";
