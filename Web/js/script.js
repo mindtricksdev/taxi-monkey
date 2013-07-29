@@ -85,7 +85,7 @@ var app = {
             address: "",
             fullAdress: "",
             shortAdress: "",
-            ready: "error"
+            status: "loading"
         }
     },
     isOnline: "false",
