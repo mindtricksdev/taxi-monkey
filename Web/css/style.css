@@ -108,3 +108,85 @@
 .topcoat-overlay-bg, .topcoat-overlay{
     display: none;
 }
+
+.main-h1{
+    color: #006fc8;
+    font-size: 1.2em;
+    text-align: center;
+    line-height: 1.2em;
+    padding-top: 1em;
+   
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+.main-h2{
+    color: #969992;
+    font-size: 1em;
+    text-align: center;
+    line-height: 1em;
+    padding-top: 0.2em;
+    
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+.main-map-wrapper{
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-map-mask{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background:url(../img/map_mask.png) 0 0 no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 380px;
+}
+.main-map{
+    
+}
+.main-menu-minimize{
+    height: 42px;
+    position: absolute;
+    bottom: 9em;
+    width: 100%;
+    right: 0px;
+}
+.main-menu-minimize-arrow{
+    background-image: url('../img/menu_top_arrow.png');
+    background-repeat: no-repeat;
+    background-position: 95% bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.main-menu-minimize-bg{
+    background-image: url('../img/menu_top_bg.png');
+    background-repeat: repeat-x;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.main-menu{
+    position: absolute;
+    width: 100%;
+    height: 9em;
+    bottom: 0px;
+    background-color: #288edf;
+    
+}
+.main-menu>a{
+    color: white;
+    display: block;
+    line-height: 3em;
+    font-weight: bold;
+    padding-left: 2em;
+}
+.main-menu>a:hover{
+    color: #DDD;
+}
