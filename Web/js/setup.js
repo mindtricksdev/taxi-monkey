@@ -50,7 +50,6 @@ var setup = {
             //minLength: 1,
             create: function (event, ui) {
                 $('ul.ui-autocomplete').addClass('taxi-suggestions-ul');
-                //$('#taxiCostsSuggestions').addClass('topcoat-list__container');
                 $('#taxiCostsSuggestions').hide();
             },
             response: function (event, ui) {
@@ -119,9 +118,35 @@ var setup = {
     
     addAutoCompleteToAddresses: function () {
         "use strict";
-        $('#fromLocationName, #toLocationName').autocomplete({
-            source: locationlib.getGeocodingAutocompleteSource
-        });
+        $('#fromLocationName').autocomplete({
+            source: locationlib.getGeocodingAutocompleteSource,
+            create: function (event, ui) {
+                $('ul.ui-autocomplete').addClass('address-suggestions-ul');
+            },
+            appendTo: '#fromSuggestions'
+        })
+            .data('ui-autocomplete')._renderItem = function (ul, item) {
+                return $("<li>")
+                    .data('ui-autocomplete-item', item)
+                    .append('<a>' + item.label + '</a>')
+                    .appendTo(ul)
+                    .addClass("address-suggestions-li");
+            };
+        
+        $('#toLocationName').autocomplete({
+            source: locationlib.getGeocodingAutocompleteSource,
+            create: function (event, ui) {
+                $('ul.ui-autocomplete').addClass('address-suggestions-ul');
+            },
+            appendTo: '#toSuggestions'
+        })
+            .data('ui-autocomplete')._renderItem = function (ul, item) {
+                return $("<li>")
+                    .data('ui-autocomplete-item', item)
+                    .append('<a>' + item.label + '</a>')
+                    .appendTo(ul)
+                    .addClass("address-suggestions-li");
+            };
     },
     
     initFastButtons: function () {

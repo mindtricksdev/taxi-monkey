@@ -53,8 +53,8 @@
     margin-top: 2rem;
 }
 
-#taxiCostsSuggestions{
-    max-height: 4rem;
+.taxi-suggestions-container{
+     max-height: 4rem;
     overflow-x: hidden;
     margin-left: 60px;
     background-color: #f5f9f8;
@@ -69,11 +69,6 @@
     text-align: center;
 }
 
-ul.ui-autocomplete.topcoat-list>li{
-    padding: 0.5rem;
-    margin-left: 30px;
-}
-
 .taxi-suggestions-ul{
     width: 100% !important;
     padding-left: 1% !important;
@@ -86,6 +81,16 @@ ul.ui-autocomplete.topcoat-list>li{
     width: 24%;
     text-align: center;
     border-left: 1px solid #222;
+}
+.address-suggestions-ul{
+    top: 0px !important;
+    left: 0px !important;
+}
+.address-suggestions-li{
+    width: 100%;
+    display: inline-block;
+    height: 2.5em;
+    line-height: 2.5em;
 }
 .taxi-suggestions-li:first-child{
     border-left: 0px solid black;
