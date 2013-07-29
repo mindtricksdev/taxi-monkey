@@ -25,15 +25,17 @@
     <script  src="cordova.js"></script>
     
     <title>Taxi | Menu</title>
+    
+   
 </head>
 <body>
     <h1 class="main-h1">taxi checker</h1>
     <h2 class="main-h2">- Campus Leu -</h2>
     <div class="main-map-wrapper">
-        <div id="main-map"></div>
-        <div class="main-map-mask"></div>
-        <div class="main-map-loading"></div>
-        <div class="main-map-shadow"></div>
+        <div data-bind="visible: !isLoadingVisible()" id="main-map"></div>
+        <div data-bind="visible: !isLoadingVisible()" class="main-map-mask"></div>
+        <div data-bind="visible: isLoadingVisible, css: { 'anim-bouncemap' : isLoadingVisible }" class="main-map-loading"></div>
+        <div data-bind="css: { 'anim-bounceshadow' : isLoadingVisible }" class="main-map-shadow"></div>
     </div>
     <div class="main-menu-minimize">
         <div class="main-menu-minimize-bg"></div>
@@ -44,5 +46,20 @@
         <a>estimate course price</a>
         <a>history</a>
     </div>
+    
+    
+    <script>
+       
+        function AppViewModel() {
+            var self = this;
+            self.status = ko.observable("loading");
+            
+            self.isLoadingVisible = ko.computed(function(){
+                return (self.status() === "loading")
+            });
+        };
+        ko.applyBindings(new AppViewModel());
+        
+    </script>
 </body>
 </html>

@@ -170,6 +170,7 @@
     background: url(../img/map_shadow.png);
     position: absolute;
     left: -50px;
+    top: 380px;
     background-size: 100% 100%;
 }
 
