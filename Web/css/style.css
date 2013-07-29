@@ -142,12 +142,13 @@
     top: 0px;
     left: 0px;
     background:url(../img/map_mask.png) 0 0 no-repeat;
-    background-size: contain;
-    width: 100%;
+    background-size: 100% 100%;
+    width: 380px;
     height: 380px;
 }
-.main-map{
-    
+#main-map{
+    width: 380px;
+    height: 380px;
 }
 .main-menu-minimize{
     height: 42px;

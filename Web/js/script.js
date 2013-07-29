@@ -82,6 +82,17 @@ var app = {
             lng: "",
             address: ""
         }
+    },
+    
+    displayMapOnMainPage: function () {
+        "use strict";
+        var mapOptions = {
+            center: new google.maps.LatLng(44.4333, 26.1),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        },
+            map = new google.maps.Map(document.getElementById("main-map"), mapOptions);
     }
 };
 
@@ -91,5 +102,7 @@ var app = {
 
 $(document).ready(function () {
     "use strict";
+    app.displayMapOnMainPage();
     app.initialize();
+    
 });
