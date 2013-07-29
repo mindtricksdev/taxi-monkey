@@ -97,6 +97,9 @@
 .taxi-suggestions-li:first-child{
     border-left: 0px solid black;
 }
+.taxi-suggestions-li > a, .address-suggestions-li > a {
+    color: black;
+}
 
 .ui-helper-hidden-accessible {
     display:none;
