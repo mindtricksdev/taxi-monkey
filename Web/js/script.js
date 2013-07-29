@@ -62,17 +62,27 @@ var app = {
         "use strict";
         function callback(location, lat, lng) {
             $('#fromInfoBox').text(location);
-            $('#fromLatLng').val(lat + ';' + lng);
-            $('#fromAddr').val(location);
             
+            app.user.location.lat = lat;
+            app.user.location.lng = lng;
+            app.user.location.address = location;
         }
         locationlib.getCurrentLocationAsString(callback);
         //        function callback2(lat, lng) {
         //            $('#fromInfoBox').text(lat + " / " + lng);
         //        }
         //        locationlib.getCurrentLocationAsLatLng(callback2);
-    }
+    },
     
+    user: {
+        location: {
+            country: "RO",
+            city: "Bucuresti",
+            lat: "",
+            lng: "",
+            address: ""
+        }
+    }
 };
 
 
