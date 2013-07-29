@@ -151,6 +151,60 @@
     width: 380px;
     height: 380px;
 }
+.main-map-loading{
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url(../img/map_loading.png);
+    background-size: 100% 100%;
+    
+    transform-origin: center top;
+    -ms-transform-origin: center top; /* IE 9 */
+    -webkit-transform-origin: center top; /* Safari and Chrome */
+}
+.main-map-shadow{
+    width: 480px;
+    height: 70px;
+    background: url(../img/map_shadow.png);
+    position: absolute;
+    left: -50px;
+    background-size: 100% 100%;
+}
+
+.anim-bounceshadow{
+    animation: bounceshadow 3s ease-in-out infinite alternate;
+    -webkit-animation: bounceshadow 3s ease-in-out infinite alternate; /* Safari and Chrome */
+}
+.anim-bouncemap{
+    animation: bouncemap 3s ease-in-out infinite alternate;
+    -webkit-animation: bouncemap 3s ease-in-out infinite alternate; /* Safari and Chrome */
+}
+
+@keyframes bouncemap
+{
+    from {top: 0px; transform: scale3d(1,1,0)}
+    to {top: 0px; transform: scale3d(0.5,0.5,0)}
+}
+
+@-webkit-keyframes bouncemap /* Safari and Chrome */
+{
+    from {top: 0px; -webkit-transform: scale3d(1,1,0)}
+    to {top: 0px; -webkit-transform: scale3d(0.8,0.8,0)}
+}
+
+@keyframes bounceshadow
+{
+    from {transform: scale3d(1,1,0)}
+    to {transform: scale3d(0.5,0.5,0)}
+}
+
+@-webkit-keyframes bounceshadow /* Safari and Chrome */
+{
+    from {-webkit-transform: scale3d(1,1,0)}
+    to {-webkit-transform: scale3d(0.8,0.8,0)}
+}
 .main-menu-minimize{
     height: 42px;
     position: absolute;
