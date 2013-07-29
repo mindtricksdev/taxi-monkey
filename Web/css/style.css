@@ -85,12 +85,14 @@
 .address-suggestions-ul{
     top: 0px !important;
     left: 0px !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .address-suggestions-li{
     width: 100%;
     display: inline-block;
-    height: 2.5em;
-    line-height: 2.5em;
+    height: 2em;
+    line-height: 2em;
 }
 .taxi-suggestions-li:first-child{
     border-left: 0px solid black;
