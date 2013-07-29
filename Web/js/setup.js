@@ -163,7 +163,7 @@ var setup = {
         setup.hideSplashScreen();
         setup.addAutoCompleteToAddresses();
         setup.addPhonegapEvents();
-        setup.overrideDefaultBackButtonBehavior();
+        //setup.overrideDefaultBackButtonBehavior();
         setup.initFastButtons();
         
         console.log("App initialized");
