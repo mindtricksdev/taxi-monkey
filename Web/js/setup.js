@@ -44,12 +44,12 @@ var setup = {
         $('#taxiCost').autocomplete({
             source: function (request, response) {
                 var results = $.ui.autocomplete.filter(taxiCosts, request.term);
-                response(results.slice(0, 1));
+                response(results.slice(0, 4));
             },
             appendTo: '#taxiCostsSuggestions',
             //minLength: 1,
             create: function (event, ui) {
-                $('ul.ui-autocomplete').addClass('topcoat-list');
+                $('ul.ui-autocomplete').addClass('taxi-suggestions-ul');
                 //$('#taxiCostsSuggestions').addClass('topcoat-list__container');
                 $('#taxiCostsSuggestions').hide();
             },
@@ -71,7 +71,7 @@ var setup = {
                     .data('ui-autocomplete-item', item)
                     .append('<a>' + item.label + '</a>')
                     .appendTo(ul)
-                    .addClass("topcoat-list__item");
+                    .addClass("taxi-suggestions-li");
             };
     },
     
