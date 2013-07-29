@@ -131,8 +131,8 @@
 }
 .main-map-wrapper{
     position: relative;
-    width: 80%;
-    height: auto;
+    width: 380px;
+    height: 380px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -145,6 +145,7 @@
     background-size: 100% 100%;
     width: 380px;
     height: 380px;
+    pointer-events:none;
 }
 #main-map{
     width: 380px;
