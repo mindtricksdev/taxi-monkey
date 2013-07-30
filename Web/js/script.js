@@ -104,8 +104,11 @@ var app = {
     Navigation: {
         init: function () {
             "use strict";
+            
+            window.onhashchange = app.Navigation.onHashChange;
+            
             app.Navigation.changePage("page-main-menu");
-            // update hash tags
+            app.Navigation.setLocationHash("page-main-menu");
         },
         currentPage: "",
         changePage: function (page) {
@@ -114,7 +117,28 @@ var app = {
             
             $(".page-taxi").hide();
             $("#" + page).show();
+            
+            app.Navigation.setLocationHash(page);
+            
             app.Navigation.currentPage = page;
+        },
+        allowHashToUpdateApp: true,
+        getLocationHash: function () {
+            "use strict";
+            return window.location.hash.substring(1);
+        },
+        setLocationHash: function (str) {
+            "use strict";
+            app.Navigation.allowHashToUpdateApp = false;
+            window.location.hash = str;
+        },
+        onHashChange: function (e) {
+            "use strict";
+            if (app.Navigation.allowHashToUpdateApp) {
+                app.Navigation.changePage(app.Navigation.getLocationHash());
+            } else {
+                app.Navigation.allowHashToUpdateApp = true;
+            }
         }
     }
 };
