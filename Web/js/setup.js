@@ -175,6 +175,7 @@ var setup = {
             setup.displayMapOnMainPage();
         }
         locationlib.getCurrentLocationAsString(callback);
+        console.log("[loadUserLocation] Loading..");
     },
     
     displayMapOnMainPage: function () {
@@ -220,12 +221,12 @@ var setup = {
     
     initialize: function () {
         "use strict";
-        //setup.addAutoCompleteToTaxi();
+        setup.addAutoCompleteToTaxi();
         setup.addCompareAllHint();
         setup.addDialogAddNewTaxiCost();
         setup.addUseMyCurrentLocation();
         setup.hideSplashScreen();
-        //setup.addAutoCompleteToAddresses();
+        setup.addAutoCompleteToAddresses();
         setup.addPhonegapEvents();
         //setup.overrideDefaultBackButtonBehavior();
         setup.initFastButtons();
