@@ -1,5 +1,5 @@
 /*jslint browser:true nomen:true*/
-/*global $, jQuery, FastClick, console, MemoryAdapter, app, locationlib*/
+/*global $, jQuery, FastClick, console, MemoryAdapter, app, locationlib, google, ko*/
 var setup = {
 
     hideSplashScreen: function () {
@@ -106,7 +106,7 @@ var setup = {
         function updateFromLayout() {
             if ($('#use-current-location-check')[0].checked === true) {
                 $('#fromInfoBox').text("Loading your location..");
-                app.loadUserLocation();
+                app.updateFromLocation();
                 $('#fromLocationName').hide();
                 $('#fromInfoBox').show();
             } else {
@@ -163,17 +163,61 @@ var setup = {
         FastClick.attach(document.body);
     },
     
+    loadUserLocation: function () {
+        "use strict";
+        function callback(location, lat, lng) {
+            app.user.location.lat = lat;
+            app.user.location.lng = lng;
+            app.user.location.address = location;
+            app.user.location.status = "OK";
+            
+            console.log("[loadUserLocation] OK");
+            setup.displayMapOnMainPage();
+        }
+        locationlib.getCurrentLocationAsString(callback);
+    },
+    
+    displayMapOnMainPage: function () {
+        "use strict";
+        var mapOptions = {
+            center: new google.maps.LatLng(app.user.location.lat, app.user.location.lng),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true
+        },
+            map = new google.maps.Map(document.getElementById("main-map"), mapOptions);
+//            position = new google.maps.LatLng(app.user.location.lat, app.user.location.long),
+//            marker = new google.maps.Marker({
+//                position: position,
+//                map: map
+//            });
+        
+        google.maps.event.addListener(map, 'tilesloaded', function () {
+            console.log("Map Tiles Loaded");
+            app.ViewModels.MainMenu.shortAddress(app.user.location.address);
+            app.ViewModels.MainMenu.mapLoaded("OK");
+        });
+        
+        console.log("[displayMapOnMainPage] OK");
+    },
+    
     initialize: function () {
         "use strict";
-        setup.addAutoCompleteToTaxi();
+        //setup.addAutoCompleteToTaxi();
         setup.addCompareAllHint();
         setup.addDialogAddNewTaxiCost();
         setup.addUseMyCurrentLocation();
         setup.hideSplashScreen();
-        setup.addAutoCompleteToAddresses();
+        //setup.addAutoCompleteToAddresses();
         setup.addPhonegapEvents();
         //setup.overrideDefaultBackButtonBehavior();
         setup.initFastButtons();
+        
+        ko.applyBindings(new app.ViewModels.MainMenuVM());
+        
+        setup.loadUserLocation();
+        
+        
         
         console.log("App initialized");
     }

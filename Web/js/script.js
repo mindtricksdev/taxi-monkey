@@ -1,5 +1,5 @@
 /*jslint browser:true*/
-/*global $, jQuery, FastClick, console, MemoryAdapter, locationlib, setup */
+/*global $, jQuery, FastClick, console, MemoryAdapter, locationlib, setup, ko, google */
 
 var app = {
     runningOnDevice: false,
@@ -60,20 +60,12 @@ var app = {
         }
     },
     
-    loadUserLocation: function () {
+    updateFromLocation: function () {
         "use strict";
         function callback(location, lat, lng) {
             $('#fromInfoBox').text(location);
-            
-            app.user.location.lat = lat;
-            app.user.location.lng = lng;
-            app.user.location.address = location;
         }
         locationlib.getCurrentLocationAsString(callback);
-        //        function callback2(lat, lng) {
-        //            $('#fromInfoBox').text(lat + " / " + lng);
-        //        }
-        //        locationlib.getCurrentLocationAsLatLng(callback2);
     },
     
     user: {
@@ -90,25 +82,27 @@ var app = {
     },
     isOnline: "false",
     
-    displayMapOnMainPage: function () {
-        "use strict";
-        var mapOptions = {
-            center: new google.maps.LatLng(44.4333, 26.1),
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true
-        },
-            map = new google.maps.Map(document.getElementById("main-map"), mapOptions);
+    ViewModels: {
+        MainMenuVM: function () {
+            "use strict";
+            // keep a reference as app.ViewModels.MainMenuVM.shortAddress("write") does not work
+            app.ViewModels.MainMenu = this;
+            
+            this.mapLoaded = ko.observable('loading');
+            this.isLoadingVisible = ko.computed(function () {
+                return (this.mapLoaded() === "loading");
+            }, this);
+            this.shortAddress = ko.observable("loading..");
+        }
     }
 };
 
 
 
-
-
 $(document).ready(function () {
     "use strict";
-    app.displayMapOnMainPage();
+
     app.initialize();
-    
+
 });
+

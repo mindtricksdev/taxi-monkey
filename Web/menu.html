@@ -30,7 +30,7 @@
 </head>
 <body>
     <h1 class="main-h1">taxi checker</h1>
-    <h2 class="main-h2">- Campus Leu -</h2>
+    <h2 data-bind="text: shortAddress" class="main-h2">- loading -</h2>
     <div class="main-map-wrapper">
         <div data-bind="visible: !isLoadingVisible()" id="main-map"></div>
         <div data-bind="visible: !isLoadingVisible()" class="main-map-mask"></div>
@@ -46,20 +46,7 @@
         <a>estimate course price</a>
         <a>history</a>
     </div>
-    
-    
-    <script>
-       
-        function AppViewModel() {
-            var self = this;
-            self.status = ko.observable("loading");
-            
-            self.isLoadingVisible = ko.computed(function(){
-                return (self.status() === "loading")
-            });
-        };
-        ko.applyBindings(new AppViewModel());
-        
-    </script>
+
+
 </body>
 </html>
