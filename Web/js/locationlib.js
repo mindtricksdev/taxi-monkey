@@ -79,7 +79,7 @@ var locationlib = {
             util.showAlert("Failed to get user location", "Error");
         }
         
-        navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, {timeout: 20000, enableHighAccuracy: true});
+        navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, {timeout: 60000, enableHighAccuracy: true});
     },
     
     getGeocodingAutocompleteSource: function (request, response) {
