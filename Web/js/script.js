@@ -99,6 +99,23 @@ var app = {
                 self.menuVisible(!self.menuVisible());
             };
         }
+    },
+    
+    Navigation: {
+        init: function () {
+            "use strict";
+            app.Navigation.changePage("page-main-menu");
+            // update hash tags
+        },
+        currentPage: "",
+        changePage: function (page) {
+            "use strict";
+            console.log("Change page to " + page);
+            
+            $(".page-taxi").hide();
+            $("#" + page).show();
+            app.Navigation.currentPage = page;
+        }
     }
 };
 

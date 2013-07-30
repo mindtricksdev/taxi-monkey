@@ -230,6 +230,8 @@ var setup = {
         //setup.overrideDefaultBackButtonBehavior();
         setup.initFastButtons();
         
+        app.Navigation.init();
+        
         ko.applyBindings(new app.ViewModels.MainMenuVM());
         
         setup.loadUserLocation();
