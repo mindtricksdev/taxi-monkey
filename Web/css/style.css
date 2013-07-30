@@ -235,7 +235,6 @@
     height: 9em;
     bottom: 0px;
     background-color: #288edf;
-    
 }
 .main-menu>a{
     color: white;
@@ -246,4 +245,22 @@
 }
 .main-menu>a:hover{
     color: #DDD;
+}
+.main-menu-container{
+    -webkit-animation: slide-up 1s ease-in-out; /* Safari and Chrome */
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 9em;
+}
+.anim-slide-up{
+    animation: slide-up 3s ease-in-out infinite alternate;
+    -webkit-animation: slide-up 3s ease-in-out infinite alternate; /* Safari and Chrome */
+}
+
+
+@-webkit-keyframes slide-up /* Safari and Chrome */
+{
+    from {-webkit-transform: translate3d(0,9em,0)}
+    to {-webkit-transform: translate3d(0,0,0)}
 }
