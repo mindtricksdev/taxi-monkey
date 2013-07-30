@@ -194,7 +194,14 @@ var setup = {
         
         google.maps.event.addListener(map, 'tilesloaded', function () {
             console.log("Map Tiles Loaded");
-            app.ViewModels.MainMenu.shortAddress(app.user.location.address);
+            
+            setTimeout(function () {
+                google.maps.event.trigger(map, 'resize');
+
+            }, 1);
+            
+            
+            app.ViewModels.MainMenu.shortAddress("- " + app.user.location.address + " -");
             app.ViewModels.MainMenu.mapLoaded("OK");
         });
         
