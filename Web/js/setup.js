@@ -179,29 +179,30 @@ var setup = {
     
     displayMapOnMainPage: function () {
         "use strict";
-        var userLocation = new google.maps.LatLng(app.user.location.lat, app.user.location.lng);
-        var mapOptions = {
-            center: userLocation,
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI: true
-        };
+        var userLocation = new google.maps.LatLng(app.user.location.lat, app.user.location.lng),
+            
+            mapOptions = {
+                center: userLocation,
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI: true
+            },
+            
+            map = new google.maps.Map(document.getElementById("main-map"), mapOptions),
         
-        var map = new google.maps.Map(document.getElementById("main-map"), mapOptions);
-        
-        var marker = new google.maps.Marker({
-            position: userLocation,
-            map: map,
-            title: 'your position'
-        });
-        //google.maps.event.addDomListener(window, 'load', setup.displayMapOnMainPage);
-        
+            marker = new google.maps.Marker({
+                position: userLocation,
+                map: map,
+                title: 'your position'
+            });
+
         google.maps.event.addListener(map, 'tilesloaded', function () {
             console.log("Map Tiles Loaded");
             
             setTimeout(function () {
                 google.maps.event.trigger(map, 'resize');
                 map.setCenter(userLocation);
+            // might be raised on mobiles
             }, 1);
             
             app.ViewModels.MainMenu.shortAddress("- " + app.user.location.address + " -");
