@@ -335,6 +335,17 @@
     background-size: 100% 100%;
 }
 
+.map-results{
+    height: 100%;
+    width: 100%;
+}
+
+.taxi-results{
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+
 @media (max-width:516px) and (max-height: 659px) {
     #main-map, .main-map-mask, .main-map-wrapper, .main-map-loading{
         width: 300px;

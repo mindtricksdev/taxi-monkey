@@ -107,8 +107,10 @@ var app = {
             
             window.onhashchange = app.Navigation.onHashChange;
             
-            app.Navigation.changePage("page-main-menu");
-            app.Navigation.setLocationHash("page-main-menu");
+//            app.Navigation.changePage("page-main-menu");
+//            app.Navigation.setLocationHash("page-main-menu");
+            app.Navigation.changePage("page-estimate-results");
+            app.Navigation.setLocationHash("page-estimate-results");
         },
         currentPage: "",
         changePage: function (page) {

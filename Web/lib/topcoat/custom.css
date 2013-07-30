@@ -17,3 +17,9 @@
     -moz-background-size: cover;
     background-size: cover;
 }
+
+.topcoat-list__item-detail{
+    float: right;
+    font-weight: 500;
+    color: #0083e8;
+}
