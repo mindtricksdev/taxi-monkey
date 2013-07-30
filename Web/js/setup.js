@@ -186,14 +186,20 @@ var setup = {
                 zoom: 15,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 disableDefaultUI: true
+               
             },
             
             map = new google.maps.Map(document.getElementById("main-map"), mapOptions),
         
+            blueIcon = new google.maps.MarkerImage('img/pin.png'),
+
             marker = new google.maps.Marker({
                 position: userLocation,
                 map: map,
-                title: 'your position'
+                title: 'your position',
+                draggable: true,
+                animation: google.maps.Animation.DROP,
+                icon: blueIcon
             });
 
         google.maps.event.addListener(map, 'tilesloaded', function () {
