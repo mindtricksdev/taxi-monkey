@@ -37,10 +37,10 @@
         <div data-bind="visible: isLoadingVisible, css: { 'anim-bouncemap' : isLoadingVisible }" class="main-map-loading"></div>
         <div data-bind="css: { 'anim-bounceshadow' : isLoadingVisible }" class="main-map-shadow"></div>
     </div>
-    <div class="main-menu-container">
+    <div data-bind="css: {'anim-slide-up': menuVisible}, css: {'anim-slide-down': !menuVisible()} "  class="main-menu-container">
         <div class="main-menu-minimize">
             <div class="main-menu-minimize-bg"></div>
-            <div class="main-menu-minimize-arrow"></div>
+            <div data-bind="click: toggleMenu" class="main-menu-minimize-arrow"></div>
         </div>
         <div class="main-menu">
             <a>start metering</a>

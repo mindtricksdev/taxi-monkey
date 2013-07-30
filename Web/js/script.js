@@ -87,12 +87,17 @@ var app = {
             "use strict";
             // keep a reference as app.ViewModels.MainMenuVM.shortAddress("write") does not work
             app.ViewModels.MainMenu = this;
+            var self = this;
+            self.mapLoaded = ko.observable('loading');
+            self.isLoadingVisible = ko.computed(function () {
+                return (self.mapLoaded() === "loading");
+            });
+            self.shortAddress = ko.observable("loading..");
             
-            this.mapLoaded = ko.observable('loading');
-            this.isLoadingVisible = ko.computed(function () {
-                return (this.mapLoaded() === "loading");
-            }, this);
-            this.shortAddress = ko.observable("loading..");
+            self.menuVisible = ko.observable(true);
+            self.toggleMenu = function () {
+                self.menuVisible(!self.menuVisible());
+            };
         }
     }
 };

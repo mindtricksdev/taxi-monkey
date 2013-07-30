@@ -247,18 +247,37 @@
     color: #DDD;
 }
 .main-menu-container{
-    -webkit-animation: slide-up 1s ease-in-out; /* Safari and Chrome */
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
     height: 9em;
 }
 .anim-slide-up{
-    animation: slide-up 3s ease-in-out infinite alternate;
-    -webkit-animation: slide-up 3s ease-in-out infinite alternate; /* Safari and Chrome */
+    animation: slide-up 0.5s ease-in-out 1;
+    -webkit-animation: slide-up 0.5s ease-in-out 1; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+}
+.anim-slide-down{
+    animation: slide-down 0.5s ease-in-out 1;
+    -webkit-animation: slide-down 0.5s ease-in-out 1; /* Safari and Chrome */
+    -webkit-animation-fill-mode: forwards;
+}
+@keyframes slide-down /* Safari and Chrome */
+{
+    from {transform: translate3d(0,0,0)}
+    to {transform: translate3d(0,9em,0)}
+}
+@-webkit-keyframes slide-down /* Safari and Chrome */
+{
+    from {-webkit-transform: translate3d(0,0,0)}
+    to {-webkit-transform: translate3d(0,9em,0)}
 }
 
-
+@keyframes slide-up /* Safari and Chrome */
+{
+    from {transform: translate3d(0,9em,0)}
+    to {transform: translate3d(0,0,0)}
+}
 @-webkit-keyframes slide-up /* Safari and Chrome */
 {
     from {-webkit-transform: translate3d(0,9em,0)}
