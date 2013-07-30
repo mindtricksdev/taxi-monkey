@@ -198,7 +198,7 @@ var setup = {
                 map: map,
                 title: 'your position',
                 draggable: true,
-                animation: google.maps.Animation.DROP,
+                animation: google.maps.Animation.b,
                 icon: blueIcon
             });
 
