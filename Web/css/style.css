@@ -169,11 +169,10 @@
     -webkit-transform-origin: center top; /* Safari and Chrome */
 }
 .main-map-shadow{
-    width: 480px;
+    width: 380px;
     height: 70px;
     background: url(../img/map_shadow.png);
     position: absolute;
-    left: -50px;
     top: 380px;
     background-size: 100% 100%;
 }
@@ -189,14 +188,18 @@
 
 @keyframes bouncemap
 {
-    from {top: 0px; transform: scale3d(1,1,0)}
-    to {top: 0px; transform: scale3d(0.8,0.8,0)}
+    from {
+        transform: scale3d(1,1,0);
+    }
+    to {
+        transform: scale3d(0.8,0.8,0);
+    }
 }
 
 @-webkit-keyframes bouncemap /* Safari and Chrome */
 {
-    from {top: 0px; -webkit-transform: scale3d(1,1,0)}
-    to {top: 0px; -webkit-transform: scale3d(0.8,0.8,0)}
+    from {-webkit-transform: scale3d(1,1,0)}
+    to {-webkit-transform: scale3d(0.8,0.8,0)}
 }
 
 @keyframes bounceshadow
@@ -338,10 +341,9 @@
         height: 300px;
     }
     .main-map-shadow{
-        width: 380px;
+        width: 300px;
         height: 55px;
         top: 300px;
-        left: -40px;
     }
 }
 
@@ -351,10 +353,9 @@
         height: 250px;
     }
     .main-map-shadow{
-        width: 315px;
+        width: 250px;
         height: 45px;
         top: 250px;
-        left: -33px;
     }
     .main-h1{
         padding-top: 0.5em;
