@@ -239,8 +239,9 @@
 .main-menu>a{
     color: white;
     display: block;
-    line-height: 3em;
-    font-weight: bold;
+    line-height: 2em;
+    font-weight: 500;
+    font-size: 1.5em;
     padding-left: 2em;
 }
 .main-menu>a:hover{
