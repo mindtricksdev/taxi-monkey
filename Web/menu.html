@@ -31,7 +31,7 @@
 <body>
     <h1 class="main-h1">taxi checker</h1>
     <h2 data-bind="text: shortAddress" class="main-h2">- loading -</h2>
-    <div class="main-map-wrapper">
+    <div data-bind="css: {'anim-scale-up': !menuVisible()}" class="main-map-wrapper">
         <div data-bind="visible: !isLoadingVisible()" id="main-map"></div>
         <div data-bind="visible: !isLoadingVisible()" class="main-map-mask"></div>
         <div data-bind="visible: isLoadingVisible, css: { 'anim-bouncemap' : isLoadingVisible }" class="main-map-loading"></div>
