@@ -1,5 +1,5 @@
 /*jslint browser:true*/
-/*global $, jQuery, FastClick, console, MemoryAdapter, locationlib, setup, ko, google */
+/*global $, jQuery, FastClick, console, MemoryAdapter, locationlib, setup, ko, google, util */
 
 var app = {
     runningOnDevice: false,
@@ -112,9 +112,7 @@ var app = {
             app.Navigation.changePage("page-estimate-results");
             app.Navigation.setLocationHash("page-estimate-results");
             
-            $('.md-trigger').on('click', function () {$('#modal-window').addClass('md-show'); });
-            $('.md-close').on('click', function () {$('#modal-window').removeClass('md-show'); });
-            $('.md-overlay').on('click', function () {$('#modal-window').removeClass('md-show'); });
+            $('.md-trigger').on('click', function () { util.displayModal("Title", "content", "Call", null); });
             
         },
         currentPage: "",
