@@ -113,6 +113,9 @@ var app = {
             app.Navigation.setLocationHash("page-estimate-results");
             
             $('.md-trigger').on('click', function () {$('#modal-window').addClass('md-show'); });
+            $('.md-close').on('click', function () {$('#modal-window').removeClass('md-show'); });
+            $('.md-overlay').on('click', function () {$('#modal-window').removeClass('md-show'); });
+            
         },
         currentPage: "",
         changePage: function (page) {
