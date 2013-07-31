@@ -582,6 +582,214 @@ transform:scale(.3)}
 }
 
 
+
+
+
+
+.page-transition-left-slide-in {
+  -webkit-animation: slideInLeft 0.7s forwards ease-out;
+  -o-animation: slideInLeft 0.7s forwards ease-out;
+  animation: slideInLeft 0.7s forwards ease-out;
+}
+.page-transition-right-slide-in {
+  -webkit-animation: slideInRight 0.7s forwards ease-out;
+  -o-animation: slideInRight 0.7s forwards ease-out;
+  animation: slideInRight 0.7s forwards ease-out;
+}
+@-webkit-keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideInLeft {
+  0% {
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  100% {
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-o-keyframes slideInRight {
+  0% {
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  100% {
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideInTop {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+
+
+.page-transition-left-slide-out {
+  -webkit-animation: slideOutLeft 0.7s forwards ease-out;
+  -o-animation: slideOutLeft 0.7s forwards ease-out;
+  animation: slideOutLeft 0.7s forwards ease-out;
+}
+
+.page-transition-right-slide-out {
+  -webkit-animation: slideOutRight 0.7s forwards ease-out;
+  -o-animation: slideOutRight 0.7s forwards ease-out;
+  animation: slideOutRight 0.7s forwards ease-out;
+}
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@-o-keyframes slideOutLeft {
+  0% {
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  100% {
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+@-o-keyframes slideOutRight {
+  0% {
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 @media (max-width:516px) and (max-height: 659px) {
     #main-map, .main-map-mask, .main-map-wrapper, .main-map-loading{
         width: 300px;
