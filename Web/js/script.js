@@ -181,10 +181,10 @@ var app = {
         onHashChange: function (e) {
             "use strict";
             if (app.Navigation.allowHashToChangePage) {
+                // back button pressed
                 app.Navigation.changePage(app.Navigation.getLocationHash());
-            } else {
-                app.Navigation.allowHashToChangePage = true;
             }
+            app.Navigation.allowHashToChangePage = true;
         }
     }
 };
