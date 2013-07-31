@@ -120,9 +120,8 @@ var app = {
             "use strict";
             
             window.onhashchange = app.Navigation.onHashChange;
-            
-            app.Navigation.changePage("page-main-menu");
-            app.Navigation.setLocationHash("page-main-menu");
+            $(".page-taxi").hide();
+            app.Navigation.setMainPage("page-main-menu");
            // app.Navigation.changePage("page-estimate-results");
            // app.Navigation.setLocationHash("page-estimate-results");
             
@@ -130,15 +129,43 @@ var app = {
             
         },
         currentPage: "",
+        setMainPage: function (page) {
+            "use strict";
+            console.log("First page to " + page);
+            $(".page-taxi").hide();
+            $("#" + page).show();
+            app.Navigation.setLocationHash(page);
+            app.Navigation.currentPage = page;
+        },
         changePage: function (page) {
             "use strict";
             console.log("Change page to " + page);
             
-            $(".page-taxi").hide();
+            $("#" + app.Navigation.currentPage).one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
+                function () {
+                    $(this).hide();
+                    $(this).removeClass("page-transition-left-slide-out");
+                });
+            $("#" + page).one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
+                function () {
+                    $(this).removeClass("page-transition-left-slide-in");
+                });
+            
+            
+            $("#" + app.Navigation.currentPage).addClass('page-transition-left-slide-out');
+            
             $("#" + page).show();
+            setTimeout(function () {
+                $("#" + page).addClass('page-transition-left-slide-in');
+            }, 0);
+            
+            
+                
+            // legacy: no animation
+            //$(".page-taxi").hide();
+            //$("#" + page).show();
             
             app.Navigation.setLocationHash(page);
-            
             app.Navigation.currentPage = page;
         },
         allowHashToChangePage: true,
