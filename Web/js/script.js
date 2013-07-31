@@ -140,33 +140,47 @@ var app = {
         changePage: function (page) {
             "use strict";
             console.log("Change page to " + page);
-            
-            $("#" + app.Navigation.currentPage).one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
-                function () {
-                    $(this).hide();
-                    $(this).removeClass("page-transition-left-slide-out");
-                });
-            $("#" + page).one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
-                function () {
-                    $(this).removeClass("page-transition-left-slide-in");
-                });
-            
-            
-            $("#" + app.Navigation.currentPage).addClass('page-transition-left-slide-out');
-            
-            $("#" + page).show();
-            setTimeout(function () {
-                $("#" + page).addClass('page-transition-left-slide-in');
-            }, 0);
-            
-            
-                
-            // legacy: no animation
-            //$(".page-taxi").hide();
-            //$("#" + page).show();
-            
+            app.Navigation.playTransition(page, 'forward');
             app.Navigation.setLocationHash(page);
             app.Navigation.currentPage = page;
+        },
+        goBack: function (page) {
+            "use strict";
+            console.log("Go back to " + page);
+            app.Navigation.playTransition(page, 'backward');
+            app.Navigation.setLocationHash(page);
+            app.Navigation.currentPage = page;
+        },
+        playTransition: function (page, direction) {
+            "use strict";
+            var currentPage = $("#" + app.Navigation.currentPage), nextPage = $("#" + page),
+                outAnimation, inAnimation;
+            
+            if (direction === "forward") {
+                outAnimation = "page-transition-left-slide-out";
+                inAnimation = "page-transition-left-slide-in";
+            } else {
+                outAnimation = "page-transition-right-slide-out";
+                inAnimation = "page-transition-right-slide-in";
+            }
+            
+            currentPage.one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
+                function () {
+                    $(this).hide();
+                    $(this).removeClass(outAnimation);
+                });
+            nextPage.one("animationend MSAnimationEnd webkitAnimationEnd oAnimationEnd",
+                function () {
+                    $(this).removeClass(inAnimation);
+                });
+            
+            
+            currentPage.addClass(outAnimation);
+            
+            nextPage.show();
+            setTimeout(function () {
+                nextPage.addClass(inAnimation);
+            }, 0);
         },
         allowHashToChangePage: true,
         getLocationHash: function () {
@@ -182,7 +196,7 @@ var app = {
             "use strict";
             if (app.Navigation.allowHashToChangePage) {
                 // back button pressed
-                app.Navigation.changePage(app.Navigation.getLocationHash());
+                app.Navigation.goBack(app.Navigation.getLocationHash());
             }
             app.Navigation.allowHashToChangePage = true;
         }
