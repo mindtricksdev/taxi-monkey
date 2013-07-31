@@ -135,16 +135,6 @@
             <div class="taxi-button-center">
                 <a class="topcoat-button--large--cta" >Estimate</a>
             </div>
-            
-        <!--    MODAL DIALOG-->
-            <div class="topcoat-overlay-bg"></div>
-            <aside class="topcoat-overlay">
-                <h1>Are eagles nice ?</h1>
-                <div class="topcoat-overlay-buttons">
-                    <button role="button" class="topcoat-button">No</button>
-                    <button role="button" class="topcoat-button--cta">Yes</button>
-                </div>
-            </aside>
     
     </div>
     
@@ -176,7 +166,7 @@
         <div class="topcoat-list__container taxi-results">
         <h3 class="topcoat-list__header">Taxi results</h3>
         <ul class="topcoat-list">
-            <li class="topcoat-list__item">
+            <li class="md-trigger topcoat-list__item">
             Elegance Taxi
                 <span class="topcoat-list__item-detail">10.9 RON</span>
             </li>
@@ -192,5 +182,26 @@
         </div>
         
     </div>
+    
+    
+    <!--    MODAL DIALOG-->
+    <aside class="md-modal md-effect-1" id="modal-window">
+        <div class="md-content">
+            <h1>Costs information</h1>
+            
+            <div>
+            <p>Ride Cost: 14.9 RON</p>
+            <p>Cost per km: 1.49 RON</p>
+            <p>Phone: 077777777</p>
+            
+            </div>
+            
+            <div class="topcoat-overlay-buttons">
+                <button role="button" class="topcoat-button--cta">Call</button>
+                <button role="button" class="md-close topcoat-button">Close</button>
+            </div>
+        </div>
+    </aside>
+    <div class="md-overlay"></div>
 </body>
 </html>

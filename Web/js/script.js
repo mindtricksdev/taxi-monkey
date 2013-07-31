@@ -111,6 +111,8 @@ var app = {
 //            app.Navigation.setLocationHash("page-main-menu");
             app.Navigation.changePage("page-estimate-results");
             app.Navigation.setLocationHash("page-estimate-results");
+            
+            $('.md-trigger').on('click', function () {$('#modal-window').addClass('md-show'); });
         },
         currentPage: "",
         changePage: function (page) {
