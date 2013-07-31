@@ -107,10 +107,10 @@ var app = {
             
             window.onhashchange = app.Navigation.onHashChange;
             
-//            app.Navigation.changePage("page-main-menu");
-//            app.Navigation.setLocationHash("page-main-menu");
-            app.Navigation.changePage("page-estimate-results");
-            app.Navigation.setLocationHash("page-estimate-results");
+            app.Navigation.changePage("page-main-menu");
+            app.Navigation.setLocationHash("page-main-menu");
+           // app.Navigation.changePage("page-estimate-results");
+           // app.Navigation.setLocationHash("page-estimate-results");
             
             $('.md-trigger').on('click', function () { util.displayModal("Title", "content", "Call", null); });
             
@@ -127,22 +127,22 @@ var app = {
             
             app.Navigation.currentPage = page;
         },
-        allowHashToUpdateApp: true,
+        allowHashToChangePage: true,
         getLocationHash: function () {
             "use strict";
             return window.location.hash.substring(1);
         },
         setLocationHash: function (str) {
             "use strict";
-            app.Navigation.allowHashToUpdateApp = false;
+            app.Navigation.allowHashToChangePage = false;
             window.location.hash = str;
         },
         onHashChange: function (e) {
             "use strict";
-            if (app.Navigation.allowHashToUpdateApp) {
+            if (app.Navigation.allowHashToChangePage) {
                 app.Navigation.changePage(app.Navigation.getLocationHash());
             } else {
-                app.Navigation.allowHashToUpdateApp = true;
+                app.Navigation.allowHashToChangePage = true;
             }
         }
     }
