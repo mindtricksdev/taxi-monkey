@@ -70,10 +70,11 @@ var app = {
     
     estimateRideCost: function () {
         "use strict";
-        
+        $('#estimateRideCostButton').addClass('button-loading');
         
         // simulate callback
         setTimeout(function () {
+            $('#estimateRideCostButton').removeClass('button-loading');
             app.Navigation.changePage('page-estimate-results');
         }, 2500);
         

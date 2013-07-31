@@ -450,6 +450,138 @@
 }
 
 
+
+
+.button-loading.topcoat-button--large--cta{
+    padding-right: 60px;
+    
+}
+.button-loading>#circularG{
+    display: block;
+}
+#circularG {
+    display: none;
+position: absolute;
+top: 23px;
+right: 20px;
+width: 20px;
+height: 20px;
+}
+
+.circularG{
+position:absolute;
+background-color:#FFFFFF;
+width:5px;
+height:5px;
+-webkit-border-radius:3px;
+-webkit-animation-name:bounce_circularG;
+-webkit-animation-duration:1.04s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:3px;
+-ms-animation-name:bounce_circularG;
+-ms-animation-duration:1.04s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+border-radius:3px;
+animation-name:bounce_circularG;
+animation-duration:1.04s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+#circularG_1{
+left:0;
+top:8px;
+-webkit-animation-delay:0.39s;
+-ms-animation-delay:0.39s;
+animation-delay:0.39s;
+}
+
+#circularG_2{
+left:2px;
+top:2px;
+-webkit-animation-delay:0.52s;
+-ms-animation-delay:0.52s;
+animation-delay:0.52s;
+}
+
+#circularG_3{
+top:0;
+left:8px;
+-webkit-animation-delay:0.65s;
+-ms-animation-delay:0.65s;
+animation-delay:0.65s;
+}
+
+#circularG_4{
+right:2px;
+top:2px;
+-webkit-animation-delay:0.78s;
+-ms-animation-delay:0.78s;
+animation-delay:0.78s;
+}
+
+#circularG_5{
+right:0;
+top:8px;
+-webkit-animation-delay:0.91s;
+-ms-animation-delay:0.91s;
+animation-delay:0.91s;
+}
+
+#circularG_6{
+right:2px;
+bottom:2px;
+-webkit-animation-delay:1.04s;
+-ms-animation-delay:1.04s;
+animation-delay:1.04s;
+}
+
+#circularG_7{
+left:8px;
+bottom:0;
+-webkit-animation-delay:1.17s;
+-ms-animation-delay:1.17s;
+animation-delay:1.17s;
+}
+
+#circularG_8{
+left:2px;
+bottom:2px;
+-webkit-animation-delay:1.3s;
+-ms-animation-delay:1.3s;
+animation-delay:1.3s;
+}
+
+@-webkit-keyframes bounce_circularG{
+0%{
+-webkit-transform:scale(1)}
+
+100%{
+-webkit-transform:scale(.3)}
+
+}
+
+@-ms-keyframes bounce_circularG{
+0%{
+-ms-transform:scale(1)}
+
+100%{
+-ms-transform:scale(.3)}
+
+}
+
+@keyframes bounce_circularG{
+0%{
+transform:scale(1)}
+
+100%{
+transform:scale(.3)}
+
+}
+
+
 @media (max-width:516px) and (max-height: 659px) {
     #main-map, .main-map-mask, .main-map-wrapper, .main-map-loading{
         width: 300px;
