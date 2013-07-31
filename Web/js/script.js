@@ -68,6 +68,20 @@ var app = {
         locationlib.getCurrentLocationAsString(callback);
     },
     
+    estimateRideCost: function () {
+        "use strict";
+        
+        
+        // simulate callback
+        setTimeout(function () {
+            app.Navigation.changePage('page-estimate-results');
+        }, 2500);
+        
+        
+    },
+    
+    
+    isOnline: "false",
     user: {
         location: {
             country: "RO",
@@ -80,8 +94,7 @@ var app = {
             status: "loading"
         }
     },
-    isOnline: "false",
-    
+
     ViewModels: {
         MainMenuVM: function () {
             "use strict";
